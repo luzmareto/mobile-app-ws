@@ -3,13 +3,13 @@ package com.appsdeveloperblog.app.ws.ui.controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("users") //http://localhost:8080/users
+@RequestMapping("/users") //http://localhost:8080/users
 public class UserController {
 
-    @GetMapping
-    public String getUser()
+    @GetMapping(path="/{userId}")
+    public String getUser(@PathVariable String userId)
     {
-        return  "get user was called";
+        return  "get user was called with userId = " + userId;
     }
 
     @PostMapping
